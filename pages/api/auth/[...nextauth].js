@@ -14,7 +14,7 @@ export default NextAuth({
   pages:{
       signIn: "/auth/signin",
   },
-
+//enhanced the session
   callbacks:{
     async session({session, token, user}){
       //attaching customised values - already have name,image and email

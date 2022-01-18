@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 
 //running on the browser
 function signin({providers}) {
+  debugger;
     return (
         //from te https://next-auth.js.org/v3/configuration/pages "auth sign in example"
         <>
@@ -13,7 +14,7 @@ function signin({providers}) {
         <div className="mt-40">
         {Object.values(providers).map((provider) => (
           <div key={provider.name}>
-            <button className="p-3 bg-blue-400 border-2 rounded-lg text-white" onClick={() => signIntoProvider(provider.id, {callbackUrl:"/"})}>
+            <button className="p-3 bg-blue-400 border-2 rounded-lg text-white" onClick={() => signIntoProvider(provider.id, {callbackUrl:"https://myinstar.netlify.app/"})}>
               Sign in with {provider.name}
             </button>
           </div>

@@ -3,6 +3,7 @@ import Posts from "./Posts"
 import MiniProfile from "./MiniProfile"
 import Suggesions from "./Suggesions"
 import { useSession } from "next-auth/react"
+import StoriesDef from "./StoriesDef"
 
 function Feed() {
     const {data: session} = useSession();
@@ -13,6 +14,7 @@ function Feed() {
             <section className="col-span-2">
                 {/* stories */}
                 <Stories />
+                <StoriesDef/>
                 {/* posts */}
                 <Posts />
             </section>

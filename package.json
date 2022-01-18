@@ -14,8 +14,10 @@
     "moment": "^2.29.1",
     "next": "latest",
     "next-auth": "4.0.0-beta.6",
+    "random-profile-generator": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-fakeimg": "^1.0.11",
     "react-moment": "^1.1.1",
     "recoil": "^0.5.2",
     "tailwind-scrollbar-hide": "^1.1.5"

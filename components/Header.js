@@ -77,7 +77,7 @@ function Header() {
                     cursor-pointer"/>
                        </>
                    ):(
-                       <button onClick={signIn}>SIgn In</button>
+                       <button onClick={() => signIn(null, {callbackUrl: 'https://myinstar.netlify.app/'})}>SIgn In</button>
                    )}
 
                 </div>
