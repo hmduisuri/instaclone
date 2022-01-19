@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 
 //running on the browser
 function signin({providers}) {
-  debugger;
+  console.log('im in signin page');
     return (
         //from te https://next-auth.js.org/v3/configuration/pages "auth sign in example"
         <>

@@ -10,7 +10,7 @@ import {
     PlusCircleIcon
 } from '@heroicons/react/outline';
 import { HomeIcon } from '@heroicons/react/solid'
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { getProviders, signIn, signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/dist/client/router';
 import { useRecoilState } from 'recoil';
 import { modelState } from '../atoms/modelAtom';
@@ -77,7 +77,7 @@ function Header() {
                     cursor-pointer"/>
                        </>
                    ):(
-                       <button onClick={() => signIn(null, {callbackUrl: 'https://myinstar.netlify.app/'})}>SIgn In</button>
+                       <button  onClick={() => signIn(getProviders.id)}>SIgn Inn</button>
                    )}
 
                 </div>
