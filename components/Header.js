@@ -20,7 +20,6 @@ function Header() {
     const [open, setOpen] = useRecoilState(modelState);
 
     const router = useRouter();
-    console.log(session)
     return (
         <div className="shadow-sm border-b bg-white sticky top-0 z-50">
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
@@ -77,7 +76,7 @@ function Header() {
                     cursor-pointer"/>
                        </>
                    ):(
-                       <button  onClick={() => signIn(getProviders.id)}>SIgn Inn</button>
+                       <button  onClick={() => signIn(getProviders.id)}>SIgn In</button>
                    )}
 
                 </div>

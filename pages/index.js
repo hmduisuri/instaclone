@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Feed from '../components/Feed'
 import Header from '../components/Header'
 import Model from '../components/Model'
+import StatusModel from '../components/StatusModel'
+
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
 
       {/* model */}
       <Model/>
+      <StatusModel/>
     </div>
   )
 }

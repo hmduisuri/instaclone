@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react';
-import randomProfile from "random-profile-generator";
 import Story from "./Story";
 
 function StoriesDef() {
@@ -8,15 +7,20 @@ const [stories, setStories] = useState([]);
 const {data: session} = useSession();
 
     useEffect(() => {
-      const stories =  [...Array(20)].map((i) => ({
-        ...randomProfile.profile(),
-        id: i,
-      }));
-      setStories(stories);
-        console.log(stories);
+        const collectusers = async() => {
+            // stories = [];
+            // for(let i=0; i<=10; i++){
+                const res = await fetch('https://randomuser.me/api/?results=20')
+                const req= await res.json();
+                setStories(req.results)
+                // const data = req.results[i];
+                // stories.push(req.results[0]);
+            // }
+    
+        }
+      collectusers().catch(console.error);
     }, []);
 
-debugger;
 
     return (
         <div className = "flex space-x-2 p-6 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
@@ -26,15 +30,10 @@ debugger;
 
         {stories.map((profile) => (
             <Story 
-                key= {profile.id} 
-                img = {profile.avatar}
-                userName = {profile.fullName}/>
-                
-        ))}
-        {/* Story */}
-        {/* Story */}
-        {/* Story */}
-        {/* Story */}
+                key= {profile?.cell} 
+                img = {profile?.picture?.thumbnail}
+                userName = {profile?.name?.first + ' ' + profile?.name?.last}/>
+                ))}
     </div>
     )
 }

@@ -42,7 +42,6 @@ function Post(props) {
             })
         }
     };
-    console.log(hasLiked)
 
     const sendComment = async (e) => {
         e.preventDefault();
