@@ -13,3 +13,18 @@
      @apply h-7 hover:scale-125 transition-all duration-150 ease-out
     }
 }
+
+aside.emoji-picker-react {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 280px;
+    font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001, Code2002, Musica, serif, LastResort;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px #8c8c8c !important;
+    overflow: hidden;
+    position: absolute !important;
+}

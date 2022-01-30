@@ -4,7 +4,7 @@ import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverT
 import { BookmarkIcon, ChatIcon, DotsHorizontalIcon, EmojiHappyIcon, HeartIcon, PaperAirplaneIcon } from "@heroicons/react/outline";
 import { HeartIcon as HeartIconFiiled } from "@heroicons/react/solid";
 import { db } from '../firebase';
-
+import dynamic from "next/dynamic";
 
 function Post(props) {
     const { data: session } = useSession();
@@ -12,8 +12,11 @@ function Post(props) {
     const [comments, setComments] = useState([]);
     const [likes, setLikes] = useState([]);
     const [hasLiked, setHasLiked] = useState(false);
+    const [showPicker, setShowPicker] = useState(false);
 
+    const Picker = dynamic(() => import('emoji-picker-react'));
     useEffect(
+        
         () =>
             onSnapshot(query(collection(db, 'posts', props.id, 'comments'), orderBy('timestamp', 'desc')),
                 snapshot => setComments(snapshot.docs))
@@ -55,6 +58,11 @@ function Post(props) {
             timestamp: serverTimestamp()
         })
     }
+    const onEmojiClicked = (event, emojiObject) => {
+        debugger;
+        setComment(previous => previous + emojiObject.emoji);
+        setShowPicker(false);
+    }
 
     return (
         <div className="bg-white my-7 border rounded-sm">
@@ -88,9 +96,9 @@ function Post(props) {
             {/* caption */}
             <div className="p-5 truncate">
                 {likes.length > 0 && (
-                    likes.length == 1 ?(
-                    <p className='font-bold mb-1'>1 like</p>
-                    ): <p className='font-bold mb-1'>{likes.length}  likes</p>
+                    likes.length == 1 ? (
+                        <p className='font-bold mb-1'>1 like</p>
+                    ) : <p className='font-bold mb-1'>{likes.length}  likes</p>
                 )}
                 <span className="font-bold mr-1">{props.username} </span> {props.caption}
             </div>
@@ -117,14 +125,24 @@ function Post(props) {
             {/* input boxes */}
             {session && (
                 <form className="flex items-center p-4">
-                    <EmojiHappyIcon className="h-7" />
+                    <EmojiHappyIcon className="h-7 cursor-pointer"
+                         onClick={() => setShowPicker(!showPicker)} />
                     <input
                         type="text"
                         value={comment}
                         onChange={e => setComment(e.target.value)}
                         placeholder="Add a comment..."
                         className="border-none flex-1 focus:ring-0 outline-none"
-                    ></input>
+                        ></input>
+                        {showPicker &&
+                           <div className='!relative left-[-43rem] top-[-21rem]'
+                        //    onBlur={()=>setShowPicker(false)}
+                           >
+                               <Picker className="aside.emoji-picker-react" 
+                               onEmojiClick={onEmojiClicked} 
+                               />
+                           </div>
+                       }
                     <button
                         type="submit"
                         disabled={!comment.trim()}
