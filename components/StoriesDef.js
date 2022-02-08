@@ -2,6 +2,21 @@ import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react';
 import Story from "./Story";
 
+//stories are render from server side.
+// export async function getServerSideProps() {
+//     const res = await fetch('https://randomuser.me/api/?results=20')
+//     const data = await res.json();
+//     // setStories(req.results)
+// debugger;
+// //props return from the server side 
+//     return {
+//         props: {
+//             stories : data.results
+//         }
+//     }
+
+// }
+
 function StoriesDef() {
 const [stories, setStories] = useState([]);
 const {data: session} = useSession();

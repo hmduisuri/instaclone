@@ -10,7 +10,7 @@ function Suggesions() {
                 const res = await fetch('https://randomuser.me/api/?results=5')
                 const req= await res.json();
                 setSuggesions(req.results);
-    debugger;
+
             }
       collectusers().catch(console.error);
 
