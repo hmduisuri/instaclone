@@ -8,7 +8,7 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.NEXT_AUTH_URL 
+      // callbackURL: process.env.NEXT_AUTH_URL 
     }),
     // ...add more providers here
   ],
@@ -16,8 +16,8 @@ export default NextAuth({
   pages:{
       signIn: "/auth/signin",
   },
-//enhanced the session
   callbacks:{
+    //enhanced the session
     async session({session, token, user}){
       //attaching customised values - already have name,image and email
        session.user.username = session.user.name.split(" ").join("").toLowerCase();
@@ -26,10 +26,17 @@ export default NextAuth({
 
        return session;
     },
-    async redirect({ url, baseUrl }) {
-      debugger;
-      console.log("base url" + baseUrl)
-      return baseUrl
-    },
+    // async jwt({ token, account }) {
+    //   // Persist the OAuth access_token to the token right after signin
+    //   if (account) {
+    //     token.accessToken = account.access_token
+    //   }
+    //   return token
+    // },
+    // async redirect({ url, baseUrl }) {
+    //   debugger;
+    //   console.log("base url" + baseUrl)
+    //   return baseUrl
+    // },
   }
 })

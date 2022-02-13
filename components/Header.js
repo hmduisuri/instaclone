@@ -76,7 +76,7 @@ function Header() {
                     cursor-pointer"/>
                        </>
                    ):(
-                       <button  onClick={() => signIn(getProviders.id,{callbackUrl: 'https://myinstar.netlify.app'})}>SIgn In</button>
+                       <button onClick={() => signIn('google',{callbackUrl: 'https://myinstar.netlify.app'})}>SIgn In</button>
                    )}
 
                 </div>
