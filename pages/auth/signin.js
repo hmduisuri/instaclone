@@ -16,6 +16,7 @@ function signin() {
   useEffect(() => {
     const providers = async() =>{
       const providerslist = await getProviders();
+      console.log(providerslist)
       setProviders(providerslist);
       debugger;
     }

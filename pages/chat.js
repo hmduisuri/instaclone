@@ -15,11 +15,11 @@ function chat() {
   const [ loadChat, setLoadChat ] = useState(false);
   return <>
     <Header />
-    <div className='bg-gray-50 min-h-screen p-5'>
-      <div className='grid grid-cols-1 min-h-screen md:grid-cols-2 md:max-w-3xl xl:grid-cols-4 xl:max-w-6xl mx-auto
+    <div className='bg-gray-50 container mx-auto max-h-screen pt-5'>
+       <div className='grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-4 xl:max-w-6xl mx-auto
       bg-gradient-to-r from-[#4b4b4b] via-[#8a4242] to-[#4b4b4b] drop-shadow-lg 
-      border-[1px] border-gray-500 rounded-md'>
-        <div className="col-span-1 border-r-[1px] border-gray-700">
+      border-[1px] border-gray-500 rounded-md overflow-hidden' >
+        <div className="col-span-1 border-r-[1px] border-gray-700 ">
           <div className='flex items-center justify-between p-5'>
             <h3 className=' font-bold' >Messages</h3>
             <h3 className='font-semibold text-blue-500'>1 Request</h3>
@@ -45,7 +45,7 @@ function chat() {
           </div>
           }
         </section>
-      </div>
+      </div> 
 
     </div>
 
