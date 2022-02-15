@@ -19,12 +19,16 @@ export default NextAuth({
   callbacks:{
     //enhanced the session
     async session({session, token, user}){
+      try{ 
       //attaching customised values - already have name,image and email
        session.user.username = session.user.name.split(" ").join("").toLowerCase();
        //sub is the google userid commings back
        session.user.uid = token.sub;
 
        return Promise.resolve(session).catch(err=>console.log(err));
+      }catch(err){
+        console.log(err)
+      }
     },
     // async jwt({ token, account }) {
     //   // Persist the OAuth access_token to the token right after signin
