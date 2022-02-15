@@ -2,13 +2,13 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
 export default NextAuth({
-  
+
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.NEXT_AUTH_URL 
+      // callbackURL: process.env.NEXT_AUTH_URL 
     }),
     // ...add more providers here
   ],
@@ -24,7 +24,7 @@ export default NextAuth({
        //sub is the google userid commings back
        session.user.uid = token.sub;
 
-       return session;
+       return Promise.resolve(session);
     },
     // async jwt({ token, account }) {
     //   // Persist the OAuth access_token to the token right after signin
