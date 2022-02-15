@@ -24,7 +24,7 @@ export default NextAuth({
        //sub is the google userid commings back
        session.user.uid = token.sub;
 
-       return Promise.resolve(session).catch(function (err){console.log(err)});
+       return Promise.resolve(session).catch(err=>console.log(err));
     },
     // async jwt({ token, account }) {
     //   // Persist the OAuth access_token to the token right after signin
