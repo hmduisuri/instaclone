@@ -31,6 +31,8 @@ function Model() {
             caption: captionRef.current.value,
             profileimage: session.user.image,
             timestamp: serverTimestamp()
+        }).catch(function(error) {
+            console.log(error);
         });
         // 2)
         console.log("New Doc added with ID", docRef.id);
@@ -38,12 +40,16 @@ function Model() {
 
         // 3)
         await uploadString(imageRef, selectedFile, "data_url").then(async snapshot => {
-            const downloadURL = await getDownloadURL(imageRef);
+            const downloadURL = await getDownloadURL(imageRef).catch(function (e){
+                console.log(error);
+            });
 
             // 4)
             await updateDoc(doc(db, 'posts', docRef.id), {
                 image: downloadURL
-            })
+            }).catch(function (e){
+                console.log(error);
+            });
         });
 
         setOpen(false);

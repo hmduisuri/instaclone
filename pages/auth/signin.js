@@ -15,7 +15,9 @@ function signin() {
   
   useEffect(() => {
     const providers = async() =>{
-      const providerslist = await getProviders();
+      const providerslist = await getProviders().catch(function (e){
+        console.log(error);
+    });
       console.log(providerslist)
       setProviders(providerslist);
       debugger;

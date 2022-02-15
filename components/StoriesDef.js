@@ -26,7 +26,9 @@ const {data: session} = useSession();
             // stories = [];
             // for(let i=0; i<=10; i++){
                 const res = await fetch('https://randomuser.me/api/?results=20')
-                const req= await res.json();
+                const req= await res.json().catch(function (e){
+                    console.log(error);
+                });
                 setStories(req.results)
                 // const data = req.results[i];
                 // stories.push(req.results[0]);

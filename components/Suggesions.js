@@ -7,8 +7,12 @@ function Suggesions() {
 
     useEffect(() => {
         const collectusers = async() => {
-                const res = await fetch('https://randomuser.me/api/?results=5')
-                const req= await res.json();
+                const res = await fetch('https://randomuser.me/api/?results=5').catch(function (e){
+                    console.log(error);
+                });
+                const req= await res.json().catch(function (e){
+                    console.log(error);
+                });;
                 setSuggesions(req.results);
 
             }

@@ -38,11 +38,15 @@ function Post(props) {
 
     const likePost = async () => {
         if (hasLiked) {
-            await deleteDoc(doc(db, 'posts', props.id, 'likes', session.user.uid))
+            await deleteDoc(doc(db, 'posts', props.id, 'likes', session.user.uid)).catch(function (e){
+                console.log(error);
+            });
         } else {
             await setDoc(doc(db, 'posts', props.id, 'likes', session.user.uid), {
                 username: session.user.username,
-            })
+            }).catch(function (e){
+                console.log(error);
+            });
         }
     };
 
@@ -56,7 +60,9 @@ function Post(props) {
             username: session.user.username,
             userimg: session.user.image,
             timestamp: serverTimestamp()
-        })
+        }).catch(function (e){
+            console.log(error);
+        });
     }
     const onEmojiClicked = (event, emojiObject) => {
         debugger;
