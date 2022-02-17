@@ -1,15 +1,15 @@
 import { useSession } from 'next-auth/react';
 import { useRecoilState } from "recoil"
-import { selectedUserNameState, selectedUserImgState, statusState } from "../atoms/modelAtom";
+// import { selectedUserNameState, selectedUserImgState, statusState } from "../atoms/modelAtom";
 
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment, useState } from "react";
 function StateModel() {
     const MY_ACCESS_KEY = "7xD3AvkToUrfIhls1imJyJec8R3Z4am_netgggBC9ag"
     const {data: session} = useSession();
-    const [open, setOpen] = useRecoilState(statusState);
-    const [sltdUserName, setSltdUserName] = useRecoilState(selectedUserNameState);
-    const [sltdUserImg, setSltdUserImg] = useRecoilState(selectedUserImgState);
+    // const [open, setOpen] = useRecoilState(statusState);
+    // const [sltdUserName, setSltdUserName] = useRecoilState(selectedUserNameState);
+    // const [sltdUserImg, setSltdUserImg] = useRecoilState(selectedUserImgState);
 
     const [userStatus, setuserStatus] = useState('');
     const [alt, setalt] = useState('');
