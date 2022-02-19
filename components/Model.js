@@ -16,22 +16,22 @@ function Model() {
     const [selectedFile, setSeletdFile] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const uploadPost = async() => {
-        if(loading) return;
+    async function uploadPost() {
+        if (loading)
+            return;
 
         setLoading(true);
         // 1) create a post and upload it to the firestore 'posts' collection
         // 2) Get the post ID for the newly ceated posts
         // 3) Upload image to firebase storage with the post ID 
         // 4) Get the download URL from fb storage and upload the original post with image.
-
         // 1)
-        const docRef = await addDoc(collection(db,'posts'), {
+        const docRef = await addDoc(collection(db, 'posts'), {
             username: session.user.username,
             caption: captionRef.current.value,
             profileimage: session.user.image,
             timestamp: serverTimestamp()
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log(error);
         });
         // 2)
@@ -39,15 +39,15 @@ function Model() {
         const imageRef = ref(storage, `posts/${docRef.id}/image`);
 
         // 3)
-        await uploadString(imageRef, selectedFile, "data_url").then(async snapshot => {
-            const downloadURL = await getDownloadURL(imageRef).catch(function (e){
+        await uploadString(imageRef, selectedFile, "data_url").then(async (snapshot) => {
+            const downloadURL = await getDownloadURL(imageRef).catch(function (e) {
                 console.log(error);
             });
 
             // 4)
             await updateDoc(doc(db, 'posts', docRef.id), {
                 image: downloadURL
-            }).catch(function (e){
+            }).catch(function (e) {
                 console.log(error);
             });
         });

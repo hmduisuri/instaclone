@@ -30,8 +30,9 @@ export default NextAuth({
        session.user.username = session.user.name.split(" ").join("").toLowerCase();
        //sub is the google userid commings back
        session.user.uid = token.sub;
-
-       return Promise.resolve(session).catch(err=>console.log(err));
+       console.log('session' + session)
+       return Promise.resolve(session)
+       
       }catch(err){
         console.log(err)
       }
