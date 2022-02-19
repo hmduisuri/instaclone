@@ -37,10 +37,14 @@ export default NextAuth({
     //   }
     //   return token
     // },
-    // async redirect({ url, baseUrl }) {
-    //   debugger;
-    //   console.log("base url" + baseUrl)
-    //   return baseUrl
-    // },
+    redirect: async( url, baseUrl ) => {
+      debugger;
+      console.log('url' + url + baseUrl)
+      // if(url === '/auth/signin'){
+      //     return Promise.resolve('/hhe');
+      // }
+      return Promise.resolve('https://myinstar.netlify.app/');
+    
+    },
   }
 })
