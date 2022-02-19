@@ -14,7 +14,7 @@
     "firebase": "^9.4.1",
     "moment": "^2.29.1",
     "next": "latest",
-    "next-auth": "4.0.0-beta.6",
+    "next-auth": "4.0.0-beta.4",
     "random-profile-generator": "^2.3.0",
     "randomuser": "^1.2.2",
     "react": "^17.0.2",

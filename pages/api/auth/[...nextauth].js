@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
+import FacebookProvider from "next-auth/providers/facebook"
 
 export default NextAuth({
 
@@ -10,6 +11,10 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: process.env.NEXT_AUTH_URL 
     }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+    })
     // ...add more providers here
   ],
 
@@ -18,7 +23,8 @@ export default NextAuth({
   },
   callbacks:{
     //enhanced the session
-    async session({session, token, user}){
+    async session({session, token}){
+      debugger;
       try{ 
       //attaching customised values - already have name,image and email
        session.user.username = session.user.name.split(" ").join("").toLowerCase();
@@ -37,14 +43,15 @@ export default NextAuth({
     //   }
     //   return token
     // },
-    redirect: async( url, baseUrl ) => {
-      debugger;
-      console.log('url' + url + baseUrl)
+    // redirect: async( url, baseUrl ) => {
+    //   debugger;
+
+    //   console.log('url' + url + baseUrl)
       // if(url === '/auth/signin'){
       //     return Promise.resolve('/hhe');
       // }
-      return Promise.resolve('https://myinstar.netlify.app/');
+    //   return Promise.resolve('https://myinstar.netlify.app/').catch(err=>console.log(err));
     
-    },
+    // },
   }
 })
