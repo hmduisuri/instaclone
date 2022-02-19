@@ -5,17 +5,17 @@ export const modelState = atom({
     default: false,
 })
 
-// export const statusState = atom({
-//     key:'statusState',
-//     default: false,
-// })
+export const statusState = atom({
+    key:'statusState',
+    default: false,
+})
 
-// export const selectedUserNameState = atom({
-//     key: 'selectedUserNameState',
-//     default: null
-// })
+export const selectedUserNameState = atom({
+    key: 'selectedUserNameState',
+    default: null
+})
 
-// export const selectedUserImgState = atom({
-//     key: 'selectedUserImgState',
-//     default: null
-// })
+export const selectedUserImgState = atom({
+    key: 'selectedUserImgState',
+    default: null
+})
