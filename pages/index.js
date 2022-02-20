@@ -3,6 +3,7 @@ import Feed from '../components/Feed'
 import Header from '../components/Header'
 import Model from '../components/Model'
 import StatusModel from '../components/StatusModel'
+import Footer from '../components/Footer'
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Feed/>
 
       {/* model */}
+      <Footer/>
       <Model/>
       <StatusModel/>
     </div>

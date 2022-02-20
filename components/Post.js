@@ -65,7 +65,7 @@ function Post(props) {
         });
     }
     const onEmojiClicked = (event, emojiObject) => {
-        debugger;
+      
         setComment(previous => previous + emojiObject.emoji);
         // setShowPicker(false);
     }

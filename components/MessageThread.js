@@ -22,9 +22,7 @@ function MessageThread() {
         ), []);
 
     const onEmojiClicked = (event, emojiObject) => {
-        debugger;
         setTypedMessage(previous => previous + emojiObject.emoji);
-
         // setShowPicker(false);
     }
     const sendMessage = async (e) => {
@@ -41,7 +39,7 @@ function MessageThread() {
             .then(function () {
                 setTypedMessage("");
                 console.log('Message sent');
-                debugger;
+            
             })
             .catch(function (error) {
                 console.log(error);

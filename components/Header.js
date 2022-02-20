@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import {
     SearchIcon,
@@ -18,9 +18,10 @@ import { modelState } from '../atoms/modelAtom';
 function Header() {
     const { data: session } = useSession();
     const [open, setOpen] = useRecoilState(modelState);
+    const [menuClicked, setMenuClicked] = useState()
 
     const router = useRouter();
-    debugger;
+
     return (
         <div className="shadow-sm border-b bg-white sticky top-0 z-50">
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
@@ -57,7 +58,8 @@ function Header() {
                 {/* right */}
                 <div className="flex items-center justify-end space-x-4">
                     <HomeIcon onClick = {() => router.push('/')} className="navBtn" />
-                    <MenuIcon className="h-6 md:hidden cursor-pointer" />
+                    <MenuIcon onClick={()=>setMenuClicked(!menuClicked)} className="h-6 md:hidden cursor-pointer" />
+                   
                    {session?(
                        <>
                              <div className="relative navBtn">

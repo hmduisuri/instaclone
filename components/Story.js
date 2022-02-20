@@ -14,7 +14,7 @@ function Story(props) {
         setSltdUserName(e?.currentTarget?.innerText);    
         setSltdUserImg(e?.target?.currentSrc);    
 
-        debugger;
+     
     }
     selectedStatusOwnRef?.current?.value?setUserState(selectedStatusOwnRef.current.value):null;
 
