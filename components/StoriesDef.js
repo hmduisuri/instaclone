@@ -7,7 +7,7 @@ import Story from "./Story";
 //     const res = await fetch('https://randomuser.me/api/?results=20')
 //     const data = await res.json();
 //     // setStories(req.results)
-// debugger;
+//  ;
 // //props return from the server side 
 //     return {
 //         props: {

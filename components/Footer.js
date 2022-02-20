@@ -1,14 +1,18 @@
 import { HeartIcon, PaperAirplaneIcon, PlusCircleIcon, UserGroupIcon } from '@heroicons/react/outline'
-import { Router } from 'next/router'
+import { Router, useRouter } from 'next/router'
 import React from 'react'
 import { useRecoilState } from 'recoil';
 import { modelState } from '../atoms/modelAtom';
 import { useSession } from 'next-auth/react';
 
 function Footer() {
+    const router = useRouter();
+
     const { data: session } = useSession();
     const [open, setOpen] = useRecoilState(modelState);
     return (
+        <>  
+        {session? (
         <div className="shadow-sm border-b bg-white sticky bottom-0 z-50 h-[2.5rem] p-[9px] md:hidden">
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
                 <PaperAirplaneIcon onClick={() => router.push('/chat')} className="h-5 rotate-45" />
@@ -22,6 +26,9 @@ function Footer() {
             </div>
 
         </div>
+          ):null  }
+        </>
+
     )
 }
 

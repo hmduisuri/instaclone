@@ -20,7 +20,7 @@ function signin() {
     });
       console.log(providerslist)
       setProviders(providerslist);
-      debugger;
+       
     }
     providers().catch(console.error);
 

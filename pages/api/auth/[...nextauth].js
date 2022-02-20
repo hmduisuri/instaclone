@@ -24,7 +24,7 @@ export default NextAuth({
   callbacks:{
     //enhanced the session
     async session({session, token}){
-      debugger;
+       
       try{ 
       //attaching customised values - already have name,image and email
        session.user.username = session.user.name.split(" ").join("").toLowerCase();
@@ -45,7 +45,7 @@ export default NextAuth({
     //   return token
     // },
     // redirect: async( url, baseUrl ) => {
-    //   debugger;
+    //    ;
 
     //   console.log('url' + url + baseUrl)
       // if(url === '/auth/signin'){
