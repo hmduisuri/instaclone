@@ -131,7 +131,7 @@ function Post(props) {
             {/* input boxes */}
             {session && (
                 <form className="flex items-center p-4">
-                    <EmojiHappyIcon className="h-7 cursor-pointer"
+                    <EmojiHappyIcon className="relative hidden md:inline-grid h-7 cursor-pointer"
                          onClick={() => setShowPicker(!showPicker)} />
                     <input
                         type="text"

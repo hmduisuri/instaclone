@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
       <Head>
-        <title>Insta 1.0</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Instar Clone</title>
+        <link rel="icon" href="/instar.png" className='h-10' />
       </Head>
 
       {/* Header */}
@@ -21,9 +21,9 @@ export default function Home() {
       <Feed/>
 
       {/* model */}
-      <Footer/>
       <Model/>
       <StatusModel/>
+      {/* <Footer/> */}
     </div>
   )
 }

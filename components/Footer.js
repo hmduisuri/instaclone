@@ -13,7 +13,7 @@ function Footer() {
     return (
         <>  
         {session? (
-        <div className="shadow-sm border-b bg-white sticky bottom-0 z-50 h-[2.5rem] p-[9px] md:hidden">
+        <div className="shadow-sm border-b bg-white sticky top-0 z-50 h-[2.5rem] p-[9px] md:hidden">
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
                 <PaperAirplaneIcon onClick={() => router.push('/chat')} className="h-5 rotate-45" />
                 <div className="absolute top-[0.1rem] left-[2.5rem] text-xs w-5 h-5 bg-red-500 rounded-full flex 
