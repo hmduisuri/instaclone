@@ -48,9 +48,9 @@ export default NextAuth({
     //    ;
 
     //   console.log('url' + url + baseUrl)
-      // if(url === '/auth/signin'){
-      //     return Promise.resolve('/hhe');
-      // }
+    //   if(url === '/auth/signin'){
+    //       return Promise.resolve('/hhe');
+    //   }
     //   return Promise.resolve('https://myinstar.netlify.app/').catch(err=>console.log(err));
     
     // },

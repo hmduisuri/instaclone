@@ -49,7 +49,7 @@ function Header() {
                                 <SearchIcon className="h-5 w-5 text-gray-500" />
                             </div>
                             <input className="bg-gray-50 block w-full pl-10 sm:text-sm
-                            border-gray-300 focus:ring-black focus:border-black rounded-md"
+                            border-[#be9fc5] focus:ring-black focus:border-black rounded-md"
                                 type="text"
                                 placeholder="Search" />
                         </div>
@@ -80,7 +80,7 @@ function Header() {
                     cursor-pointer"/>
                             </>
                         ) : (
-                            <button onClick={() => signIn()}>SIgn In</button>
+                            <button onClick={() => signIn()} className="font-bold text-[#5B2169]">SIgn In</button>
                         )}
 
                     </div>

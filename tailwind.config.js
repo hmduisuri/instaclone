@@ -6,7 +6,11 @@ module.exports = {
     extend: {
       zIndex: {
         '-1': '-1',
-        }
+        },
+        backgroundImage: {
+          'chatimg': "url('/chatimg.avif')",
+          'outerbackground': "url('/outerbackground.jpg')",
+          }
     },
   },
   variants: {

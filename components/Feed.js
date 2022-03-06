@@ -8,6 +8,7 @@ import StoriesDef from "./StoriesDef"
 function Feed() {
     const {data: session} = useSession();
     return (
+        <div className="bg-chatimg bg-no-repeat">
         <main className={`grid grid-cols-1  md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-6xl mx-auto p-5 ${!session &&
         "!grid-cols-1 !max-w-3xl"}`}>
             {/* section */}
@@ -28,6 +29,7 @@ function Feed() {
             </section>
             }
         </main>
+        </div>
     )
 }
 

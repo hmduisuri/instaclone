@@ -87,7 +87,7 @@ function Post(props) {
                     <div className="flex space-x-4">
                         {
                             hasLiked ? (
-                                <HeartIconFiiled onClick={likePost} className="btn text-purple-800" />
+                                <HeartIconFiiled onClick={likePost} className="btn text-[#5B2169]" />
                             ) : (
                                 <HeartIcon onClick={likePost} className="btn" />
                             )

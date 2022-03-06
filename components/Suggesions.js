@@ -12,7 +12,7 @@ function Suggesions() {
                 });
                 const req= await res.json().catch(function (e){
                     console.log(error);
-                });;
+                });
                 setSuggesions(req.results);
 
             }
@@ -41,7 +41,7 @@ function Suggesions() {
                         <h3 className="text-xs text-gray-400">Lives in {profile?.location?.city + ', '+ profile?.location?.country}</h3>
                     </div>
 
-                    <button className="text-blue-400 text-sm font-bold">Follow</button>
+                    <button className="text-[#5B2169] text-sm font-bold">Follow</button>
                 </div>
             ))}
         </div>

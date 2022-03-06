@@ -48,7 +48,7 @@ function MessageThread() {
 
     return (
         <>
-            <h1 className='text-lg font-bold border-b-2 border-gray-500 pb-2 mb-2'>My Instar Group Chat</h1>
+            <h1 className='text-lg font-bold border-b-2 border-gray-500 pb-2 mb-2'>Instar Group Chat</h1>
 
             <div className='ml-5 mr-2 max-h-[27rem] overflow-y-scroll scrollbar-thumb-black scrollbar-thin '>
                 {
@@ -58,21 +58,20 @@ function MessageThread() {
                                 <li key={mess.id} className="flex mr-5 justify-end">
                                     <div className='inline-flex items-end'>
                                         <div className="text-right">
-                                            <p className='text-xs italic'>{mess?.data()?.username}</p>
-                                            <p className='p-2 bg-[#00000057] rounded-md '>
+                                            <p className='text-xs italic text-[#5B2169]'>{mess?.data()?.username}</p>
+                                            <p className='p-2 bg-[#707070c7] rounded-md '>
                                                 {mess.data().message}
                                             </p>
                                         </div>
-                                        {/* <img src={mess.data().avatar} className="flex-none ml-2 border-2 border-green-800 rounded-full w-9 h-9" alt="" /> */}
                                     </div>
                                 </li>
                                 :
                                 <li key={mess.id} className="flex mr-5 justify-start">
                                     <div className='inline-flex items-end'>
-                                        <img src={mess.data().avatar} className="mr-2 border-2 border-green-800 rounded-full w-9" alt="" />
+                                        <img src={mess.data().avatar} className="mr-2 border-2 border-[#5B2169] rounded-full w-9" alt="" />
                                         <div className="text-left">
-                                            <p className='text-xs italic'>{mess?.data()?.username}</p>
-                                            <p className='p-2 bg-[#00000057] rounded-md '>
+                                            <p className='text-xs italic text-[#5B2169]'>{mess?.data()?.username}</p>
+                                            <p className='p-2 bg-[#9f91ff] rounded-md '>
                                                 {mess.data().message}
                                             </p>
 
@@ -110,7 +109,7 @@ function MessageThread() {
                     // ref={messageRef} 
                     value={typeMessage}
                     onChange={(e) => setTypedMessage(e.target.value)} />
-                <button type="button" className='flex-initial w-32 h-10 bg-blue-500 hover:bg-blue-700 text-black font-bold py-1 px-1 rounded-xl' onClick={sendMessage}
+                <button type="button" className='flex-initial w-32 h-10 bg-purple-500 hover:bg-[#5B2169] text-black font-bold py-1 px-1 rounded-xl' onClick={sendMessage}
                 >Send</button>
             </div>
             {/* </form> */}

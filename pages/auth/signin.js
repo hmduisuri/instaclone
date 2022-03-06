@@ -30,12 +30,12 @@ function signin() {
         //from te https://next-auth.js.org/v3/configuration/pages "auth sign in example"
         <>
         <Header/>
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 px-14 text-center">
+        <div className="bg-chatimg bg-no-repeat flex flex-col items-center justify-center min-h-screen py-2 px-14 text-center">
            <img className="w-80" src="https://links.papareact.com/ocw" alt=""/>
-        <div className="mt-40">
+        <div className="mt-40 flex">
         {Object.values(providers).map((provider) => (
           <div key={provider.name}>
-            <button className="p-3 bg-blue-400 border-2 rounded-lg text-white" onClick={() => signIntoProvider(provider.id, {callbackUrl:"https://myinstar.netlify.app/"})}>
+            <button className="p-3 bg-purple-600 hover:bg-[#5b2169] border-2 rounded-lg text-white" onClick={() => signIntoProvider(provider.id, {callbackUrl:"https://myinstar.netlify.app/"})}>
               Sign in with {provider.name}
             </button>
           </div>
