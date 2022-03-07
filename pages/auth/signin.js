@@ -3,6 +3,7 @@ import {getProviders , signIn as signIntoProvider} from "next-auth/react";
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 
+
 // function signin(){
 //   return(
 //     <button>Signin with Google</button>
@@ -29,9 +30,15 @@ function signin() {
     return (
         //from te https://next-auth.js.org/v3/configuration/pages "auth sign in example"
         <>
+       
+        <title>Instar Clone</title>
+        <link rel="icon" href="/favicon.png" className='h-10' />
+      
         <Header/>
         <div className="bg-chatimg bg-no-repeat flex flex-col items-center justify-center min-h-screen py-2 px-14 text-center">
-           <img className="w-80" src="https://links.papareact.com/ocw" alt=""/>
+           <img className="w-80" src="/logo.png" alt=""/>
+          {/* <h2> Please note that this is a clone of Instagram. </h2>
+          <h2>これはInstagramのクローンであることに注意してください。</h2> */}
         <div className="mt-40 flex">
         {Object.values(providers).map((provider) => (
           <div key={provider.name}>

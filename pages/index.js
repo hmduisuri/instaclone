@@ -11,7 +11,7 @@ export default function Home() {
     <div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
       <Head>
         <title>Instar Clone</title>
-        <link rel="icon" href="/instar.png" className='h-10' />
+        <link rel="icon" href="/favicon.png" className='h-10' />
       </Head>
 
       {/* Header */}

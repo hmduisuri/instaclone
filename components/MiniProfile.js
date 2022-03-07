@@ -11,7 +11,7 @@ function MiniProfile() {
 
             <div className="flex-1 mx-4">
                 <h2 className="font-bold">{session?.user?.username}</h2>
-                <h3 className="text-sm text-gray-400">Welcome to my insta</h3>
+                <h3 className="text-sm text-gray-400">Welcome to Instar Clone</h3>
             </div>
             
             <button onClick= {signOut} className="text-[#5B2169] text-sm font-semibold">Sign Out</button>
